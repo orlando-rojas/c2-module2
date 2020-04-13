@@ -1,3 +1,3 @@
 print "What is your name? "
-name = gets.chomp
+name = gets.chomp.capitalize
 puts "Hello, #{name}!"
