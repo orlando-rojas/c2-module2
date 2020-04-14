@@ -10,6 +10,7 @@ def hailstone(x)
         steps += 1
     end
     puts "final step #{steps} => #{x}"
+    steps
 end
 
 hailstone(3)
