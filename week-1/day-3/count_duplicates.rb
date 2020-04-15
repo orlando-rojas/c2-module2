@@ -1,12 +1,6 @@
 def count_duplicates(numbers)
     result = 0
-    numbers.sort!
     temp_array = numbers.select {|n| numbers.count(n)>1}
-    temp_array.each do |x|
-        if (x != temp_array[temp_array.index(x)+1])
-            uniq_array.push(x)
-        end
-    end
     uniq_array = temp_array.uniq
     uniq_array.each do |n|
         result += temp_array.count(n)-1
