@@ -1,4 +1,4 @@
-def ping_pong(k)
+def pingpong(k)
     value = 0
     sum = 1
 
@@ -11,4 +11,4 @@ def ping_pong(k)
     value
 end
 
-puts ping_pong(28) 
+puts pingpong(28) 
