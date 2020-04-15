@@ -1,6 +1,6 @@
 def each(arr)
-   arr.each do |x|
-    yield(x)
+   for i in 0...arr.length
+      yield(arr[i])
    end
 end
 
