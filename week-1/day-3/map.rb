@@ -1,5 +1,9 @@
 def map(arr)
-    arr.map {|x| yield(x)}
+    result = []
+    for i in 0...arr.length
+        result.push(yield(arr[i]))
+    end
+    result
 end
 
 test_array = [2, 3, 4, 5]
