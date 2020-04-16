@@ -43,8 +43,8 @@ class ContactBook
 
     def display
         puts '----------------'
-        @contact_list.each do |x,y|
-            puts "#{x}: #{y}"
+        @contact_list.each do |key,value|
+            puts "#{key}: #{value}"
         end
         puts '----------------'
     end
