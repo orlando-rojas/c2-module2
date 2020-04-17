@@ -8,30 +8,27 @@ class Color
     end
   
     def brightness_index
-      (r*299 + g*587 + b*114) / 1000
+        (r*299 + g*587 + b*114) / 1000
     end
   
     def brightness_difference(another_color)
-        if another_color.is_a? Color
-            (brightness_index - another_color.brightness_index).abs
-        else
-            puts "Invalid color"
-        end
+        validate_color(another_color)
+        (brightness_index - another_color.brightness_index).abs
     end
   
     def hue_difference(another_color)
-        if another_color.is_a? Color
-            hue = (r-another_color.r).abs + (g-another_color.g).abs + (b-another_color.b).abs      
-        else
-            puts "Invalid color"
-        end
+        validate_color(another_color)
+        (r-another_color.r).abs + (g-another_color.g).abs + (b-another_color.b).abs      
     end
   
     def enough_contrast?(another_color)
-        if another_color.is_a? Color
-            brightness_difference(another_color) > 125 && hue_difference(another_color) > 500
-        else
-            puts "Invalid color"
+        validate_color(another_color)
+        brightness_difference(another_color) > 125 && hue_difference(another_color) > 500
+    end
+
+    def validate_color(another_color)
+        if !another_color.is_a? Color
+            abort "Invalid color"
         end
     end
 end
@@ -43,3 +40,4 @@ puts color_a.brightness_index
 puts color_a.brightness_difference(color_b)
 puts color_a.hue_difference(color_b)
 puts color_a.enough_contrast?(color_b)
+puts color_a.enough_contrast?(35)
