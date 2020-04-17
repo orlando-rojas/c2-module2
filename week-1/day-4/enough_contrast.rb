@@ -27,9 +27,7 @@ class Color
     end
 
     def validate_color(another_color)
-        if !another_color.is_a? Color
-            abort "Invalid color"
-        end
+        abort "Invalid color" unless another_color.is_a? Color
     end
 end
 
