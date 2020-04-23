@@ -1,5 +1,4 @@
 require 'csv'
-grades_arr = []
 grades = CSV.read("grades.csv", :quote_char => "|")
 
 h = Hash.new(0)
